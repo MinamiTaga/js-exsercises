@@ -118,5 +118,3 @@ export function trim(str) {
 
   return str.slice(start, end + 1);
 }
-
-console.log(slice("Hello World!", -100, undefined))

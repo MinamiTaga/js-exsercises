@@ -16,14 +16,6 @@ export const replaceCode = (code) => {
         output += '\r\n';
       }
     }
-
 }
-
   return output;
 }
-
-
-
-// console.log(replaceCode('123a456ba789'));
-// console.log('1234\r\n5678\n9');
-console.log(replaceCode('1234\r\n5678\n9'));

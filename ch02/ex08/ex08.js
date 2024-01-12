@@ -16,7 +16,6 @@ for (let i = 0; i < codes.length; i++) {
 
   // ;がいらない条件
   if (codes[i].slice(-1) === '(' || codes[i].slice(-1) === '{' || codes[i].slice(-1) === ';' || codes[i] === '') {
-    // if (codes[i].endwith('(') || codes.endwith('{' || codes[i] === '')) {
     withSemicolons = false;
   }
 

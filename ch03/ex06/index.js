@@ -36,6 +36,7 @@ export function substring(str, indexStart, indexEnd) {
     start = indexStart;
     end = indexEnd;
   }
+  // [start, end] = (indexStart < indexEnd) ? [indexStart, indexEnd] : [imdexEnd, indexStart];
 
   const input = [...str];
   let prod = '';

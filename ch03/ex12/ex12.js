@@ -18,3 +18,5 @@ export const equals = (obj1, obj2) => {
   }
   return true;
 }
+
+console.log(equals(obj1, obj2))

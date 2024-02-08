@@ -1,5 +1,5 @@
 class DefaultMap extends Map {
-  constructor (defaultValue) {
+  constructor(defaultValue) {
     super();
     this.defaultValue = defaultValue;
   }
@@ -14,7 +14,7 @@ class DefaultMap extends Map {
 }
 
 class Histgram {
-  constructor () {
+  constructor() {
     this.letterCounts = new DefaultMap(0);
     this.totalLetters = 0;
   }
@@ -22,14 +22,14 @@ class Histgram {
   add(text) {
     text = text.replace(/\s/g, '').toUpperCase();
 
-    for(const character of text) {
+    for (const character of text) {
       const count = this.letterCounts.get(character);
-      this.letterCounts.set(character, count+1);
+      this.letterCounts.set(character, count + 1);
       this.totalLetters++;
     }
   }
 
-  toString () {
+  toString() {
     let entries = [...this.letterCounts];
 
     entries.sort((a, b) => {
@@ -41,7 +41,7 @@ class Histgram {
     })
 
     for (const entry of entries) {
-      entry[1] = entry[1] / this.totalLetters*100;
+      entry[1] = entry[1] / this.totalLetters * 100;
     }
 
     entries = entries.filter(entry => entry[1] >= 1);
@@ -63,4 +63,4 @@ async function histgramFromStdin() {
   return histgram;
 }
 
-histgramFromStdin().then(histogram => { console.log(histogram.toString())});
+histgramFromStdin().then(histogram => { console.log(histogram.toString()) });

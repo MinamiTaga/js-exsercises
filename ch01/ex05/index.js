@@ -11,6 +11,7 @@ export const sum = (array) => {
   return sum;
 };
 
+// 階乗
 export const factorial = (num) => {
   let product = 1;
   while (num > 1) {

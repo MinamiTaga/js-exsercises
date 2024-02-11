@@ -1,7 +1,7 @@
 let array =  ["r", "i", "c", "o", "h"];
 
-console.log(array.length);
+console.log(array.length); // 5
 
 delete array[3];
 
-console.log(array.length);
+console.log(array.length); // 5

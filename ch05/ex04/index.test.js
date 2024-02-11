@@ -14,7 +14,7 @@ describe("fib", () => {
   })
   describe(fibFor, () => {
     it('returns fibonatch', () => {
-      expect(fibFor(5)).toEqual(response);
+      expect(fibFor()).toEqual(response);
     })
   })
 });

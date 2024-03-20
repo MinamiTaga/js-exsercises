@@ -18,11 +18,13 @@ describe(assign, () => {
       enumerable: true,
     });
     const obj4 = { a: 54, g: 99 }
+    const defaultObj = {a: 0, b: 0};
 
     expect(assign(obj1)).toEqual(Object.assign(obj1))
     expect(assign(obj1, obj2)).toEqual(Object.assign(obj1, obj2))
     expect(assign(obj1, obj2, obj3)).toEqual(Object.assign(obj1, obj2, obj3))
     expect(assign(obj1, obj2, obj3, obj4)).toEqual(Object.assign(obj1, obj2, obj3, obj4))
+    expect(assign(obj1, defaultObj)).toEqual(Object.assign(obj1, defaultObj))
 
   })
 });

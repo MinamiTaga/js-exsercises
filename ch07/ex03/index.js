@@ -24,6 +24,7 @@ export function reverse (arr) {
 }
 
 export function every(arr, rule) {
+  // rule関数の引数3つ
   return arr.reduce((a, b) => a && rule(b), true);
 }
 

@@ -6,7 +6,7 @@ export const obj = {
     return this.r * Math.cos(this.theta);
   },
 
-    get y() {
+  get y() {
     return this.r * Math.sin(this.theta);
   },
 

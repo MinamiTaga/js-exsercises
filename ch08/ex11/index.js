@@ -1,7 +1,11 @@
-console.log(Math.floor(1.5).toString()); // 1
+console.log(Math.floor.toString()); // function floor() { [native code] }
 
 function sum (a, b) {
   return a + b;
 }
 
-console.log(sum(1, 5).toString()); // 6
+console.log(sum.toString()); 
+
+// function sum (a, b) {
+//   return a + b;
+// }

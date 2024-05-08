@@ -1,5 +1,9 @@
-import { Warrior, MagicWarrior, WarriorClass, MagicWarriorClass } from "./index";
-
+import {
+  Warrior,
+  MagicWarrior,
+  WarriorClass,
+  MagicWarriorClass,
+} from "./index";
 
 test("Warrior", () => {
   const warrior = new Warrior(50);

@@ -1,6 +1,6 @@
 const seq = [1, 2, 3, 4, 5];
 
-export function pop (seq) {
+export function pop(seq) {
   const arr = [];
   seq.forEach((a, i) => {
     if (i === seq.length - 1) return;
@@ -10,13 +10,13 @@ export function pop (seq) {
   return arr;
 }
 
-export function push (seq, element) {
+export function push(seq, element) {
   const arr = [...seq];
   arr.push(element);
   return arr;
 }
 
-export function shift (seq) {
+export function shift(seq) {
   const arr = [];
   seq.forEach((a, i) => {
     if (i === 0) return;
@@ -26,16 +26,15 @@ export function shift (seq) {
   return arr;
 }
 
-export function unshift (seq) {
+export function unshift(seq) {
   const arr = [0];
   seq.forEach((a, i) => {
-
     arr.push(a);
   });
   return arr;
 }
 
-export function sort (seq, rule) {
+export function sort(seq, rule) {
   const arr = [...seq];
   return arr.sort(rule);
 }

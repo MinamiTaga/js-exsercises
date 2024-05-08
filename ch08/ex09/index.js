@@ -1,7 +1,7 @@
-export function withResource (resouce, callback) {
-   try {
-      callback(resouce);
-   } finally {
-      resouce.close();
-   }
+export function withResource(resouce, callback) {
+  try {
+    callback(resouce);
+  } finally {
+    resouce.close();
+  }
 }

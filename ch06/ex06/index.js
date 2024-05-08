@@ -1,8 +1,8 @@
-export function prop (obj) {
+export function prop(obj) {
   const props = [];
   for (let key in obj) {
-    props.push(key)
-  };
+    props.push(key);
+  }
 
   const ownPropertyNames = Object.getOwnPropertyNames(obj);
   const ownPropertySymbols = Object.getOwnPropertySymbols(obj);
@@ -10,17 +10,15 @@ export function prop (obj) {
 
   for (let key of ownPropertyNames) {
     if (!props.includes(key)) {
-
       props.push(key);
-    };
-  };
+    }
+  }
 
   for (let key of ownPropertySymbols) {
     if (!props.includes(key)) {
-
       props.push(key);
-    };
-  };
+    }
+  }
   return props;
 }
 

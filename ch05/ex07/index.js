@@ -1,8 +1,8 @@
 function f() {
   try {
-      return true;
+    return true;
   } finally {
-      return false;
+    return false;
   }
 }
 

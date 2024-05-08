@@ -7,18 +7,20 @@ export function counterGroup() {
     return {
       count: function () {
         totalCount++;
-        return n++
+        return n++;
       },
-      reset: function () { n = 0 },
-    }
-  }
+      reset: function () {
+        n = 0;
+      },
+    };
+  };
 
   const total = function () {
     return totalCount;
-  }
+  };
 
   return {
     newCounter,
     total,
-  }
+  };
 }

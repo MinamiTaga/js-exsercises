@@ -3,8 +3,7 @@ export const evenObject = (obj) => {
   for (let p in obj) {
     if (obj[p] % 2 === 0) {
       result[p] = obj[p];
-    } 
+    }
   }
   return result;
-}
-
+};

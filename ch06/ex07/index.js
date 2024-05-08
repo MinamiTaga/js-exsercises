@@ -1,7 +1,7 @@
 export function assign(target, ...sources) {
   for (let source of sources) {
     for (let key of Object.keys(source)) {
-      target[key] = source[key]
+      target[key] = source[key];
     }
   }
   return target;

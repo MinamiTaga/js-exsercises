@@ -1,13 +1,12 @@
-const obj = {name: 'John', age: 2};
+const obj = { name: "John", age: 2 };
 
 with (obj) {
-  console.log('with');
+  console.log("with");
   console.log(name);
   console.log(age);
 }
 
-
-console.log('not with');
+console.log("not with");
 console.log(obj.name);
 console.log(obj.age);
 

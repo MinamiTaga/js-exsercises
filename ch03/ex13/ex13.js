@@ -1,5 +1,4 @@
 class Example {
-
   constructor(value) {
     this.value = value;
   }
@@ -14,5 +13,5 @@ class Example {
 }
 
 let obj = new Example(100000);
-console.log(obj+ 25)
-console.log(String(obj))
+console.log(obj + 25);
+console.log(String(obj));

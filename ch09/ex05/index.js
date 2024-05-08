@@ -1,5 +1,4 @@
-
-export function instanceOf (object, constructor) {
+export function instanceOf(object, constructor) {
   let prt = Object.getPrototypeOf(object);
 
   while (prt !== null) {

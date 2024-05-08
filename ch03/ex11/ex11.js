@@ -1,4 +1,4 @@
-const str = 'abc';
+const str = "abc";
 
 const symbol1 = Symbol(str);
 const symbol2 = Symbol(str);
@@ -8,7 +8,6 @@ const symbol2 = Symbol(str);
 const object = {};
 object[symbol1] = 1;
 object[symbol2] = 2;
-
 
 console.log(object[symbol1]); // 1
 console.log(object[symbol2]); // 2

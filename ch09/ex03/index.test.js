@@ -5,7 +5,6 @@ test("private C", () => {
   expect(c.x).toBe(42);
   expect(c.getX()).toBe(42);
 
-
   const pc = new PrivateC();
   expect(pc.x).toBe(undefined);
   expect(pc.getX()).toBe(42);

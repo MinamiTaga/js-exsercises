@@ -17,7 +17,6 @@ console.log(q.isPrototypeOf(o)); // false
 
 console.log(p.isPrototypeOf(q)); // true
 
-
 let a = [];
 a[0] = 1;
 let b = Object.create(a);
@@ -25,8 +24,8 @@ b[1] = 2;
 let c = Object.create(b);
 c[2] = 3;
 
-console.log(a); 
-console.log(b); 
+console.log(a);
+console.log(b);
 console.log(c);
 
 console.log(a.isPrototypeOf(b)); // true
@@ -37,13 +36,12 @@ console.log(c.isPrototypeOf(a)); // false
 
 console.log(b.isPrototypeOf(c)); // true
 
-
 let s = new Date();
 let t = Object.create(s);
 let u = Object.create(t);
 
-console.log(s); 
-console.log(t); 
+console.log(s);
+console.log(t);
 console.log(u);
 
 console.log(s.isPrototypeOf(t)); // true
@@ -58,8 +56,8 @@ let l = new Map();
 let m = Object.create(l);
 let n = Object.create(m);
 
-console.log(l); 
-console.log(m); 
+console.log(l);
+console.log(m);
 console.log(n);
 
 console.log(l.isPrototypeOf(m)); // true

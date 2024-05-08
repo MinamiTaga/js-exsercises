@@ -1,4 +1,4 @@
-let array =  ["r", "i", "c", "o", "h"];
+let array = ["r", "i", "c", "o", "h"];
 
 console.log(array.length); // 5
 

@@ -35,9 +35,9 @@ const answer = {
   foo: obj1.foo,
   bar: obj3.bar,
   ...obj2,
-  arr: [...arr1, num1, ...arr2]
+  arr: [...arr1, num1, ...arr2],
 };
 
-it('itないとテスト上手くいかないので付け足した', () => {
+it("itないとテスト上手くいかないので付け足した", () => {
   expect(answer).toEqual(obj);
-})
+});

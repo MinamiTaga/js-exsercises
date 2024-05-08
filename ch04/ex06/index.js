@@ -31,4 +31,3 @@ function resize2(params) {
 
   console.log({ maxWidth, maxHeight });
 }
-

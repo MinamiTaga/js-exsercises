@@ -3,8 +3,10 @@ export function Warrior(atk) {
 }
 
 Warrior.prototype = {
-  attack: function () { return this.atk * 2 },
-}
+  attack: function () {
+    return this.atk * 2;
+  },
+};
 
 export function MagicWarrior(atk, mgc) {
   Warrior.call(this, atk);
@@ -12,7 +14,9 @@ export function MagicWarrior(atk, mgc) {
 }
 
 MagicWarrior.prototype = Object.create(Warrior.prototype);
-MagicWarrior.prototype.attack = function () { return Warrior.prototype.attack.call(this) + this.mgc }
+MagicWarrior.prototype.attack = function () {
+  return Warrior.prototype.attack.call(this) + this.mgc;
+};
 
 export class WarriorClass {
   constructor(atk) {

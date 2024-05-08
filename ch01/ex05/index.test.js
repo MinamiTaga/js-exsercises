@@ -19,15 +19,15 @@ describe("math", () => {
   });
 
   // 以下に sum, factorial のテストを記載せよ
-  describe('sum', () => {
-    it('returns sum of two numbers', () => {
+  describe("sum", () => {
+    it("returns sum of two numbers", () => {
       expect(sum([34, 3, 24])).toBe(61);
-    })
-  })
+    });
+  });
 
-  describe('factorial', () => {
-    it('returns factorial of number', () => {
+  describe("factorial", () => {
+    it("returns factorial of number", () => {
       expect(factorial(4)).toBe(24);
-    })
-  })
+    });
+  });
 });

@@ -1,25 +1,30 @@
-export function sum (arr) {
+export function sum(arr) {
   if (!arr || arr.length <= 0) return 0;
-  return arr.reduce((a,b) => a+b)
+  return arr.reduce((a, b) => a + b);
 }
 
-export function join (arr, cut) {
+export function join(arr, cut) {
   try {
-    if ( !arr ) throw Error('第一引数を渡してください');
+    if (!arr) throw Error("第一引数を渡してください");
   } catch (e) {
-    console.log(e.message)
-  };
-  if ( arr.length === 0) return '';
+    console.log(e.message);
+  }
+  if (arr.length === 0) return "";
   if (cut === null) {
-    cut = 'null';
-  } else if (cut === '') {
-    return arr.reduce((a, b) => (a?.toString() || '') + ( b?.toString() || '' ))
+    cut = "null";
+  } else if (cut === "") {
+    return arr.reduce((a, b) => (a?.toString() || "") + (b?.toString() || ""));
   }
 
-  return arr.reduce((a, b) => (a?.toString() || '') + (cut ? cut.toString() : ',') + ( b?.toString() || '' ))
+  return arr.reduce(
+    (a, b) =>
+      (a?.toString() || "") +
+      (cut ? cut.toString() : ",") +
+      (b?.toString() || ""),
+  );
 }
 
-export function reverse (arr) {
+export function reverse(arr) {
   return arr.reduce((a, b) => [b, ...a], []);
 }
 

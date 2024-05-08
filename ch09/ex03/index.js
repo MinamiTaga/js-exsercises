@@ -15,7 +15,6 @@ export class PrivateC {
 }
 
 export class ClosureC {
-
   getX() {
     let x = 42;
     return x;

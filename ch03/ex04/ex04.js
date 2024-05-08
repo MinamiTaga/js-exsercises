@@ -1,3 +1,2 @@
-
-const hundredPointsSymbol = '💯';
+const hundredPointsSymbol = "💯";
 console.log(hundredPointsSymbol.length);

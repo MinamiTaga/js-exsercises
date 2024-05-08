@@ -6,23 +6,19 @@ export function restrict(target, template) {
     if (!tmpKeys) {
       isDelete = true;
     } else {
-
       isDelete = tmpKeys.every((tmpKey) => {
         if (tmpKey === key) return false;
 
         return true;
-      })
+      });
 
       if (isDelete) {
         delete target[key];
       }
     }
-
-
   }
   return target;
-};
-
+}
 
 export function substract(target, ...sources) {
   sources.forEach((source) => {
@@ -31,12 +27,12 @@ export function substract(target, ...sources) {
     for (let key in target) {
       srcKeys.forEach((srcKey) => {
         if (key === srcKey) {
-          console.log(key, srcKey)
+          console.log(key, srcKey);
 
-          delete target[key]
+          delete target[key];
         }
-      })
+      });
     }
-  })
+  });
   return target;
-};
+}

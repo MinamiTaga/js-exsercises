@@ -12,7 +12,7 @@ export const obj = {
 
   set x(value) {
     if (isNaN(value)) {
-      throw new Error('x should be defined number');
+      throw new Error("x should be defined number");
     }
 
     const r = Math.sqrt(value ** 2 + this.y ** 2);
@@ -23,14 +23,14 @@ export const obj = {
 
   set y(value) {
     if (isNaN(value)) {
-      throw new Error('y should be defined number');
+      throw new Error("y should be defined number");
     }
 
     const r = Math.sqrt(this.x ** 2 + value ** 2);
     const theta = Math.atan2(value, this.x);
     this.r = r;
     this.theta = theta;
-  }
+  },
 };
 
 // GPT

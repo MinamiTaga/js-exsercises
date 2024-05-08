@@ -1,13 +1,13 @@
 export function any(...fns) {
-  console.log(...fns)
+  console.log(...fns);
 
-  return function(...args) {
-    return fns.some(fn => fn(...args));
+  return function (...args) {
+    return fns.some((fn) => fn(...args));
   };
 }
 
 export function catching(a, b) {
-  return function(...args){
+  return function (...args) {
     try {
       return a(...args);
     } catch (e) {

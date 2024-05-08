@@ -1,7 +1,7 @@
 const data = {
   id: 1,
-  name: 'name',
-  email: 'abc@example.com',
+  name: "name",
+  email: "abc@example.com",
 };
 
 for (const property in data) {

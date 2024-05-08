@@ -12,12 +12,12 @@ const data = [
 
 const sortedData = data.sort((a, b) => {
   if (a.math !== b.math) {
-      return b.math - a.math; 
+    return b.math - a.math;
   } else if (a.chemistry !== b.chemistry) {
-      return b.chemistry - a.chemistry; 
+    return b.chemistry - a.chemistry;
   } else {
-      return b.geography - a.geography; 
+    return b.geography - a.geography;
   }
 });
 
-console.log(sortedData)
+console.log(sortedData);

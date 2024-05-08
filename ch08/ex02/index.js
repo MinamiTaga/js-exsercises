@@ -4,5 +4,4 @@ export const exp = (x, n) => {
     num = num * x;
   }
   return num;
-}
-
+};

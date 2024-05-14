@@ -18,7 +18,6 @@ export function isEmailAddress(email) {
 
   if (
     !domain ||
-    domain.length > 252 ||
     domain.match(/^\./) ||
     domain.match(/\.$/)
   ) {
@@ -26,6 +25,7 @@ export function isEmailAddress(email) {
   }
 
   if (
+    email.length > 254 ||
     email.match(/\.{2}/) ||
     email.match(/\(/) ||
     email.match(/\)/) ||
@@ -38,11 +38,22 @@ export function isEmailAddress(email) {
     email.match(/,/) ||
     email.match(/\\/) ||
     email.match(/"/) ||
-    email.match(/ /)
-    // email.match(/^[^\x01-\x7E\uFF61-\uFF9F]+$/) // 全角チェックできてない
+    email.match(/ /) ||
+    !isASCII(email)
   ) {
     return false;
   }
 
+  return true;
+}
+
+// あいうえおの排除
+function isASCII(str) {  
+  for (let i = 0; i < str.length; i++) {
+      if (str.charCodeAt(i) > 127) {
+        console.log(str.charCodeAt(i))
+          return false;
+      }
+  }
   return true;
 }

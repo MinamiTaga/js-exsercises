@@ -1,6 +1,5 @@
 // f はオブジェクトを1つ引数に取る関数
 function cache(f) {
-  console.time();
   const cacheMap = new WeakMap();
 
   return function cachedFn(obj) {

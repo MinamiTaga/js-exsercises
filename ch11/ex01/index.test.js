@@ -2,7 +2,7 @@ import { TypeMap } from "./index.js";
 
 describe("TypeMap", () => {
 
-  class Foo {}
+  class Foo { }
 
   const typeMap = new TypeMap();
 
@@ -27,14 +27,9 @@ describe("TypeMap", () => {
     expect(() => {
       typeMap.set(Number, null);
     }).toThrow();
-  
+
     expect(() => {
       typeMap.set(String, undefined);
     }).toThrow();
   })
-
-
-
-
-
 });

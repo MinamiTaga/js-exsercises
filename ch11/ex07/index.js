@@ -1,6 +1,7 @@
 function kakko (str) {
   const pattern = /\(\)/;
   const regex = new RegExp(`[^${pattern}}]`, 'g');
+  // ()以外のものは取り除く
   str = str.replace(regex, '');
 
   while (pattern.test(str)) {

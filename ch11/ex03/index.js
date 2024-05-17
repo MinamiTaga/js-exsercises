@@ -41,3 +41,4 @@ littleToBig(new Uint32Array([0, 1, 2]))
 //   console.log(result) // Uint32Array(1) [ 2018915346 ]
 //   return result;
 // }
+// もちろんこれでもOK、でもDataViewが簡単だよという話

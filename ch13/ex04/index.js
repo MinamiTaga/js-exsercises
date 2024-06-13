@@ -4,47 +4,51 @@ import { join } from "node:path";
 
 export async function fetchFirstFileSizePromises(path, callback) {
 
-    try {
-      const files = await fsPromises.readFile(path);
+  fsPromises
+    .readdir(path)
+    .then((files) => {
       if (files.length === 0) {
         callback(null, null);
-      };
-      const stat = await fsPromises.stat(join(path, files))
-      return stat.size;
-    } catch (e) {
-      callback(e);
-    }
+        return;
+      }
+
+      fsPromises
+        .stat(join(path, files[0]))
+        .then((stats) => callback(null, stats.size))
+        .catch((err) => callback(err));
+    })
+    .catch((err) => callback(err));
 }
 
 export async function fetchSumOfFileSizesPromises(path, callback) {
-  let total = 0;
-  let files;
-  let rest = [];
+  fsPromises
+    .readdir(path)
+    .catch((err) => callback(err))
+    .then((files) => {
+      let total = 0;
+      const rest = [...files];
 
-  try {
-    files = await fsPromises.readdir(path)
-    rest = [...files];
-  } catch (e) {
-    callback(e);
-  }
+      function iter() {
+        if (rest.length === 0) {
+          callback(null, total);
+          return;
+        }
 
-  async function iter() {
-    if (rest.length === 0) {
-      callback(null, total);
-      return;
-    }
-    const next = rest.pop();
-
-    try {
-      const stats = await fsPromises.stat(join(path, next));
-
-      total += stats.size;
+        const next = rest.pop();
+      
+        fsPromises
+          .stat(join(path, next))
+          .catch((err) => {
+            callback(err);
+            return;
+          })
+          .then((stats) => {
+            total += stats.size;
+            iter();
+          });
+      }
       iter();
-    } catch(e) {
-      callback(e)
-    }
-  }
-  iter()
+    });
 }
 
 

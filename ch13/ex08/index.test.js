@@ -1,15 +1,20 @@
 import { fetchFirstFileSize, fetchFirstFileSize2, fetchSumOfFileSizes, fetchSumOfFileSizes2 } from ".";
 
-test('fetchFirstFileSize',async () => {
-  const path = './ch13/index.js'
-  const callback = () => {}
 
-  expect(await fetchFirstFileSize2(path, callback)).toBe(fetchFirstFileSize(path, callback))
+test('fetchFirstFileSizePromises', async () => {
+  let result;
+  let exp;
+  fetchFirstFileSize('./ch13/ex04/index.js', (err, size) => result = size)
+  await fetchFirstFileSize2('./ch13/ex04/index.js', (err, size) => exp = size)
+
+  expect(exp).toBe(result)
 })
 
 test('fetchSumOfFileSizesPromises', async () => {
-  const path = './ch13/index.js'
-  const callback = () => {}
+  let result;
+  let exp;
+  fetchSumOfFileSizes('./ch13/ex04/index.js', (err, size) => result = size)
+  await fetchSumOfFileSizes2('./ch13/ex04/index.js', (err, size) => result = size)
 
-  expect(await fetchSumOfFileSizes2(path, callback)).toBe(fetchSumOfFileSizes(path, callback))
+  expect(exp).toBe(result)
 })

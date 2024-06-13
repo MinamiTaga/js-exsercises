@@ -1,16 +1,19 @@
 import * as fs from "node:fs";
 import { join } from "node:path";
 
-export async function fetchFirstFileSize2(path) {
+export async function fetchFirstFileSize2(path, callback) {
   try {
     const files = await fs.readdir(path);
     if (files.length === 0) {
-      return null;
+      callback(null, null);
+      return;
     }
     const stats = await fs.stat(join(path, files[0]));
-    return stats.size;
+    callback(null, stats.size);
+
   } catch (e) {
-    console.log(e);
+    callback(e);
+    return;
   }
 }
 
@@ -60,6 +63,7 @@ export async function fetchSumOfFileSizes2(path, callback) {
       iter();
     } catch (e) {
       callback(e);
+      return;
     }
   }
 }

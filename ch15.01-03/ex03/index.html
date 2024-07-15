@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>integtity check</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <!-- こっちは値が正しいので読み込まれる -->
+    <!-- <script
+      src="./index.js"
+      integrity="USb3CXEhG+rSDlg352Y/sA7T2Un3JBmKg1Z8ThDix82rmaDwOzH0IFkjhX5xrR5v"
+      crossorigin="anonymous"
+      data-testid="right-integrity"
+    ></script> -->
+    <!-- こっちは値が正しくないので読み込まれない -->
+    <script
+      src="./index.js"
+      integrity="sha256-wrongvalue"
+      crossorigin="anonymous"
+      data-testid="dummy-integrity"
+    ></script>
+    <div data-testid="test">index.js読み込まれてない</div>
+  </body>
+</html>

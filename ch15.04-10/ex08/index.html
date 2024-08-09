@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Clock</title>
+    <style>
+        svg {
+            width: 600px;
+            height: 600px;
+        }
+        .hourhand, .minutehand, .secondhand {
+            stroke: black;
+            stroke-width: 2;
+            stroke-linecap: round;
+        }
+        .minutehand {
+            stroke: blue;
+            stroke-width: 1.5;
+        }
+        .secondhand {
+            stroke: red;
+            stroke-width: 1;
+        }
+    </style>
+</head>
+<body>
+    <svg id="clock" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45" stroke="black" stroke-width="2" fill="none"/>
+        <line class="hourhand" x1="50" y1="50" x2="50" y2="30"/>
+        <line class="minutehand" x1="50" y1="50" x2="50" y2="20"/>
+        <line class="secondhand" x1="50" y1="50" x2="50" y2="15"/>
+    </svg>
+    <script>
+        (function updateClock() {
+            const now = new Date();
+            const sec = now.getSeconds();
+            const min = now.getMinutes() + sec / 60;
+            const hour = (now.getHours() % 12) + min / 60;
+            const secangle = sec * 6;
+            const minangle = min * 6;
+            const hourangle = hour * 30;
+
+            const sechand = document.querySelector('#clock .secondhand');
+            const minhand = document.querySelector('#clock .minutehand');
+            const hourhand = document.querySelector('#clock .hourhand');
+
+            sechand.setAttribute('transform', `rotate(${secangle}, 50, 50)`);
+            minhand.setAttribute('transform', `rotate(${minangle}, 50, 50)`);
+            hourhand.setAttribute('transform', `rotate(${hourangle}, 50, 50)`);
+
+            setTimeout(updateClock, 1000);
+        })()
+    </script>
+</body>
+</html>

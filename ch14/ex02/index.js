@@ -3,6 +3,7 @@ export class MyArrayLike {
     this.length = length;
   }
 
+  // これなくてもテスト通る
   *[Symbol.iterator]() {
     let index = 0;
     while (this[index] !== undefined) {

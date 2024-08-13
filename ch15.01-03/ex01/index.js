@@ -4,6 +4,7 @@ const input = document.querySelector("#new-todo");
 
 form.addEventListener("submit", (e) => {
   // TODO: ここで form のイベントのキャンセルを実施しなさい (なぜでしょう？)
+  // formの送信操作をするとリロードで画面が真っ白になってしまう
   e.preventDefault();
 
   // 両端からホワイトスペースを取り除いた文字列を取得する

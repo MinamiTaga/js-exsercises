@@ -27,26 +27,55 @@ document.getElementById("image").addEventListener("change", (event) => {
     const imageData = originalCtx.getImageData(0, 0, img.width, img.height);
     const data = imageData.data;
 
-    // グレースケールへの変換 (RGB を足して平均を取っている)
-    //
-    // ガウシアンフィルタを実装する場合はこの周辺のコードを変更しなさい
-    // imageData の中身はそのままに別の配列に結果を格納するとよい
-    // ```js
-    // const outputData = new Uint8ClampedArray(imageData.data.length);
-    //
-    // // TODO: ここで imageData.data を参照して outputData に結果を格納
-    //
-    // const outputImageData = new ImageData(outputData, img.width, img.height);
-    // filteredCtx.putImageData(outputImageData, 0, 0);
-    // ```
-    for (let i = 0; i < data.length; i += 4) {
-      const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
-      data[i] = avg;
-      data[i + 1] = avg;
-      data[i + 2] = avg;
+    // わからなかったため、以下ChatGPTによる回答
+    // ガウシアンカーネルの定義 (5x5)
+    const kernel = [
+      [1, 4, 7, 4, 1],
+      [4, 16, 26, 16, 4],
+      [7, 26, 41, 26, 7],
+      [4, 16, 26, 16, 4],
+      [1, 4, 7, 4, 1],
+    ];
+
+    const kernelWeight = kernel.flat().reduce((sum, value) => sum + value, 0);
+
+    const outputData = new Uint8ClampedArray(data.length);
+
+    const width = img.width;
+    const height = img.height;
+
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        let r = 0,
+          g = 0,
+          b = 0;
+
+        for (let ky = 0; ky < 5; ky++) {
+          for (let kx = 0; kx < 5; kx++) {
+            const px = x + kx - 2;
+            const py = y + ky - 2;
+
+            if (px >= 0 && px < width && py >= 0 && py < height) {
+              const index = (py * width + px) * 4;
+              const weight = kernel[ky][kx];
+
+              r += data[index] * weight;
+              g += data[index + 1] * weight;
+              b += data[index + 2] * weight;
+            }
+          }
+        }
+
+        const destIndex = (y * width + x) * 4;
+        outputData[destIndex] = r / kernelWeight;
+        outputData[destIndex + 1] = g / kernelWeight;
+        outputData[destIndex + 2] = b / kernelWeight;
+        outputData[destIndex + 3] = data[destIndex + 3]; // アルファチャネルをそのままコピー
+      }
     }
 
-    filteredCtx.putImageData(imageData, 0, 0);
+    const outputImageData = new ImageData(outputData, img.width, img.height);
+    filteredCtx.putImageData(outputImageData, 0, 0);
   });
 
   reader.readAsDataURL(file);

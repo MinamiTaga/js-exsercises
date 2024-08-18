@@ -52,13 +52,13 @@ document.querySelector("#all").addEventListener("click", (e) => {
 document.querySelector("#active").addEventListener("click", (e) => {
   e.preventDefault();
   window.history.pushState(null, "", "/ch15.04-10/ex12/active");
-  renderTodos(todos.filter(todo => !todo.completed));
+  renderTodos(todos.filter((todo) => !todo.completed));
 });
 
 document.querySelector("#completed").addEventListener("click", (e) => {
   e.preventDefault();
   window.history.pushState(null, "", "/ch15.04-10/ex12/completed");
-  renderTodos(todos.filter(todo => todo.completed));
+  renderTodos(todos.filter((todo) => todo.completed));
 });
 
 // Active や Completed を選択後にブラウザのリロードを行うとどうなるだろうか。hashchange と pushState それぞれの実装について調べなさい (ヒント: 開発者ツールでどのような通信が発生しているか調べてみなさい)。
@@ -66,3 +66,4 @@ document.querySelector("#completed").addEventListener("click", (e) => {
 // pushState → 404になる（http://localhost:3000/ch15.04-10/ex12/completed　へのGETリクエストが行われている）
 
 // ここまでの例は serve コマンドで HTML や JS といったファイル配信するサーバーを立ち上げてきた。 サーバー側がどのような挙動をすれば pushState を使った実装が期待通り動作するか考えて答えなさい。
+//　ch15.04−10/ 以下のどこにいたとしても ch15.04−10/index.html にリクエストを送るようにする。

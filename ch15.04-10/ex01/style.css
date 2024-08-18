@@ -85,12 +85,13 @@ button:hover {
   color: #888;
 }
 
-/*  */
+/* todoリスト内の文字の配置を設定している */
 #todo-list .view {
   display: flex;
   align-items: center;
 }
 
+/* チェックボックスの右にmarginを設定している */
 .toggle {
   margin-right: 10px;
 }

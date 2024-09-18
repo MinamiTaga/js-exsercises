@@ -13,4 +13,16 @@ async function getMessageFromServer() {
   messageContainer.appendChild(messageElement);
 
   // TODO: ここにサーバーとのやり取り等を実装しなさい
+  button.disabled = true;
+
+  const eventSource = new EventSource("http://localhost:3000/message");
+
+  eventSource.onmessage = (event) => {
+    const data = JSON.parse(event.data).value;
+    messageElement.textContent = data.value;
+  };
+
+  eventSource.onerror = () => {
+    button.disabled = false;
+  };
 }

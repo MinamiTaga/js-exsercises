@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <title>ex13</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/ch15.11-15/ex13//index.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #chat-container {
+        width: 100%;
+        height: 80vh;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      #input-container {
+        display: flex;
+      }
+      #input-box {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      #send-button {
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      .message {
+        margin: 5px 0;
+      }
+      .user-message {
+        text-align: right;
+        background-color: cadetblue;
+      }
+      .ai-message {
+        text-align: left;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container"></div>
+    <div id="input-container">
+      <input type="text" id="input-box" placeholder="メッセージを入力..." />
+      <button id="send-button">送信</button>
+    </div>
+  </body>
+</html>

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   sendButton.addEventListener("click", async () => {
     const userMessage = inputBox.value.trim();
     if (userMessage === "") return;
+    inputBox.value = "";
 
     // ユーザーメッセージを表示
     displayMessage(userMessage, "user");
@@ -15,8 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const response = await getResponse(userMessage);
     displayMessage(response, "ai");
 
-    // 入力ボックスをクリア
-    inputBox.value = "";
     chatContainer.scrollTop = chatContainer.scrollHeight; // スクロールを一番下にする
   });
 

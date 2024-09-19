@@ -41,20 +41,6 @@ function receiveRequest() {
   };
 }
 
-function setForm(inputId, buttonId, resTextId) {
-  document.querySelector(`#${buttonId}`).addEventListener("click", async () => {
-    const reqText = document.querySelector(`#${inputId}`).value;
-    const resTextElement = document.querySelector(`#${resTextId}`);
-    resTextElement.textContent = "Loading...";
-    try {
-      const res = await sendRequest(reqText);
-      resTextElement.textContent = res;
-    } catch (err) {
-      resTextElement.textContent = err.message;
-    }
-  });
-}
-
 document.querySelector("#button1").addEventListener("click", async () => {
   const request = document.querySelector("#textBox1").value;
   const responseZone = document.querySelector(`#response1`);

@@ -3,7 +3,7 @@ const list = document.querySelector("#todo-list");
 const input = document.querySelector("#new-todo");
 
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log("cookie : " + document.cookies);
+  // console.log("cookie : " + document.cookies);
   // TODO: ここで API を呼び出してタスク一覧を取得し、
   // 成功したら取得したタスクを appendToDoItem で ToDo リストの要素として追加しなさい
   try {

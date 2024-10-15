@@ -31,3 +31,31 @@ async function startChild() {
 }
 
 // TODO: ここに処理を書く
+
+// シグナルを 2 種類以上トラップし、そのシグナルと同じシグナルを子プロセスに通知し、子プロセスがそのシグナルによって終了したことを確認し、自身も終了する
+process.on("SIGINT", () => {
+  child.kill("SIGINT");
+  child.on("exit", (signal) => {
+    if (signal === "SIGINT") {
+      process.exit(0);
+    }
+  });
+});
+
+process.on("SIGTERM", () => {
+  child.kill("SIGTERM");
+  child.on("exit", (signal) => {
+    if (signal === "SIGTERM") {
+      process.exit(0);
+    }
+  });
+});
+
+// 子プロセスが異常終了した場合、再起動する
+// これを↑より上に書くと↑に到達できないと言われたので下にした
+for (;;) {
+  const response = await startChild();
+  if (!response[0]) {
+    console.log("restart");
+  }
+}

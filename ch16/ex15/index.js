@@ -1,5 +1,5 @@
 // const threads = require("worker_threads");
-import * as threads from "worker_threads";
+import { threads } from "worker_threads";
 
 if (threads.isMainThread) {
   // let sharedBuffer = new SharedArrayBuffer(4);

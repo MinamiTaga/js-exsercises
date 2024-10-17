@@ -3,11 +3,7 @@ import path from "path";
 import fs from "fs";
 const app = express();
 
-function serve(rootDirectory, port) {
-  app.listen(port, () => {
-    console.log("Listening on port", port);
-  });
-
+function serve(rootDirectory) {
   // リクエストが「/test/mirror」の場合、リクエストをそのまま送り返す。
   // リクエストのヘッダやボディを見たい場合に便利。
   app.get("/test/mirror", (request, response) => {
@@ -84,4 +80,4 @@ function serve(rootDirectory, port) {
 }
 export default app;
 
-serve(process.argv[2] || "tmp", parseInt(process.argv[3]) || 8000);
+serve(process.argv[2] || "tmp");

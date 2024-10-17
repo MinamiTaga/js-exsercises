@@ -43,7 +43,7 @@ function serve(rootDirectory, port) {
       request.pipe(response);
     } else if (request.method === "PUT") {
       // アップロード処理
-      const writeStream = createWriteStream(`./upload${endpoint}`);
+      const writeStream = createWriteStream(`ch16/ex10/foo/bar/hello.txt`);
       request.on("data", (data) => {
         writeStream.write(data);
       });

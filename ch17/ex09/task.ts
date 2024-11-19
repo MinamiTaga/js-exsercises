@@ -17,7 +17,7 @@ interface Task {
 
 type Priority = 'low' | 'middle' | 'high';
 
-export type PriorityTask = Task & {
+type PriorityTask = Task & {
   priority: Priority;
 };
 
@@ -55,7 +55,7 @@ export class TaskManager {
 
   // 引数の関数にマッチするタスクを返す
   // 引数を省略した場合はすべてのタスクを返す
-  getTasks(predicate?: (task: Task) => boolean): Task[] {
+  getTasks(predicate?: (task: Task) => boolean): PriorityTask[] {
     if (predicate === undefined) {
       return this._tasks;
     } else {
@@ -70,6 +70,8 @@ export function isLowOrCompletedTask(priorityTask: PriorityTask): boolean {
 }
 
 // 判定関数の否定結果を返す関数を生成する
-export function not(f: (arg) => boolean): (arg) => boolean {
+export function not(
+  f: (arg: PriorityTask) => boolean
+): (arg: PriorityTask) => boolean {
   return (arg) => !f(arg);
 }

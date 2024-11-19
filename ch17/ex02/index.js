@@ -107,6 +107,7 @@ switch (command) {
 
         list    オープンな Issue の Id と Title の一覧を表示します。
       `);
+    break;
   default:
     console.log('使い方は -h からヘルプを確認してください');
 }

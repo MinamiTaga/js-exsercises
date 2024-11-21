@@ -15,5 +15,12 @@ module.exports = {
     jest: true,
     browser: true,
   },
-  ignorePatterns: ['ex01/format_sample.js', 'ex06/dist/main.js'],
+  rules: {
+    'require-jsdoc': 'off',
+  },
+  ignorePatterns: [
+    'ex01/format_sample.js',
+    'ex05/dist/main.js',
+    'ex06/dist/main.js',
+  ],
 };

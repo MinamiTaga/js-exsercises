@@ -1,7 +1,7 @@
-/******/ (() => {
+/** ****/ (() => {
   // webpackBootstrap
-  /******/ 'use strict';
-  /******/ var __webpack_modules__ = [
+  /** ****/ 'use strict';
+  /** ****/ const __webpack_modules__ = [
     /* 0 */
     /***/ (
       __unused_webpack___webpack_module__,
@@ -15,9 +15,9 @@
         /* harmony export */ ROWS: () => /* binding */ ROWS,
         /* harmony export */
       });
-      /* harmony import */ var _updateGrid_js__WEBPACK_IMPORTED_MODULE_0__ =
+      /* harmony import */ const _updateGrid_js__WEBPACK_IMPORTED_MODULE_0__ =
         __webpack_require__(1);
-      /* harmony import */ var _renderGrid_js__WEBPACK_IMPORTED_MODULE_1__ =
+      /* harmony import */ const _renderGrid_js__WEBPACK_IMPORTED_MODULE_1__ =
         __webpack_require__(2);
 
       // 50 x 50 の盤面とする
@@ -101,7 +101,7 @@
         /* harmony export */ updateGrid: () => /* binding */ updateGrid,
         /* harmony export */
       });
-      /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ =
+      /* harmony import */ const _index_js__WEBPACK_IMPORTED_MODULE_0__ =
         __webpack_require__(0);
 
       // Life Game のルールに従ってセルを更新する
@@ -167,7 +167,7 @@
         /* harmony export */ renderGrid: () => /* binding */ renderGrid,
         /* harmony export */
       });
-      /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ =
+      /* harmony import */ const _index_js__WEBPACK_IMPORTED_MODULE_0__ =
         __webpack_require__(0);
 
       // grid を canvas に描画する
@@ -199,93 +199,93 @@
 
       /***/
     },
-    /******/
+    /** ****/
   ];
-  /************************************************************************/
-  /******/ // The module cache
-  /******/ var __webpack_module_cache__ = {};
-  /******/
-  /******/ // The require function
-  /******/ function __webpack_require__(moduleId) {
-    /******/ // Check if module is in cache
-    /******/ var cachedModule = __webpack_module_cache__[moduleId];
-    /******/ if (cachedModule !== undefined) {
-      /******/ return cachedModule.exports;
-      /******/
+  /** **********************************************************************/
+  /** ****/ // The module cache
+  /** ****/ const __webpack_module_cache__ = {};
+  /** ****/
+  /** ****/ // The require function
+  /** ****/ function __webpack_require__(moduleId) {
+    /** ****/ // Check if module is in cache
+    /** ****/ const cachedModule = __webpack_module_cache__[moduleId];
+    /** ****/ if (cachedModule !== undefined) {
+      /** ****/ return cachedModule.exports;
+      /** ****/
     }
-    /******/ // Create a new module (and put it into the cache)
-    /******/ var module = (__webpack_module_cache__[moduleId] = {
-      /******/ // no module.id needed
-      /******/ // no module.loaded needed
-      /******/ exports: {},
-      /******/
+    /** ****/ // Create a new module (and put it into the cache)
+    /** ****/ const module = (__webpack_module_cache__[moduleId] = {
+      /** ****/ // no module.id needed
+      /** ****/ // no module.loaded needed
+      /** ****/ exports: {},
+      /** ****/
     });
-    /******/
-    /******/ // Execute the module function
-    /******/ __webpack_modules__[moduleId](
+    /** ****/
+    /** ****/ // Execute the module function
+    /** ****/ __webpack_modules__[moduleId](
       module,
       module.exports,
       __webpack_require__
     );
-    /******/
-    /******/ // Return the exports of the module
-    /******/ return module.exports;
-    /******/
+    /** ****/
+    /** ****/ // Return the exports of the module
+    /** ****/ return module.exports;
+    /** ****/
   }
-  /******/
-  /************************************************************************/
-  /******/ /* webpack/runtime/define property getters */
-  /******/ (() => {
-    /******/ // define getter functions for harmony exports
-    /******/ __webpack_require__.d = (exports, definition) => {
-      /******/ for (var key in definition) {
-        /******/ if (
+  /** ****/
+  /** **********************************************************************/
+  /** ****/ /* webpack/runtime/define property getters */
+  /** ****/ (() => {
+    /** ****/ // define getter functions for harmony exports
+    /** ****/ __webpack_require__.d = (exports, definition) => {
+      /** ****/ for (const key in definition) {
+        /** ****/ if (
           __webpack_require__.o(definition, key) &&
           !__webpack_require__.o(exports, key)
         ) {
-          /******/ Object.defineProperty(exports, key, {
+          /** ****/ Object.defineProperty(exports, key, {
             enumerable: true,
             get: definition[key],
           });
-          /******/
+          /** ****/
         }
-        /******/
+        /** ****/
       }
-      /******/
+      /** ****/
     };
-    /******/
+    /** ****/
   })();
-  /******/
-  /******/ /* webpack/runtime/hasOwnProperty shorthand */
-  /******/ (() => {
-    /******/ __webpack_require__.o = (obj, prop) =>
+  /** ****/
+  /** ****/ /* webpack/runtime/hasOwnProperty shorthand */
+  /** ****/ (() => {
+    /** ****/ __webpack_require__.o = (obj, prop) =>
       Object.prototype.hasOwnProperty.call(obj, prop);
-    /******/
+    /** ****/
   })();
-  /******/
-  /******/ /* webpack/runtime/make namespace object */
-  /******/ (() => {
-    /******/ // define __esModule on exports
-    /******/ __webpack_require__.r = (exports) => {
-      /******/ if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-        /******/ Object.defineProperty(exports, Symbol.toStringTag, {
+  /** ****/
+  /** ****/ /* webpack/runtime/make namespace object */
+  /** ****/ (() => {
+    /** ****/ // define __esModule on exports
+    /** ****/ __webpack_require__.r = (exports) => {
+      /** ****/ if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+        /** ****/ Object.defineProperty(exports, Symbol.toStringTag, {
           value: 'Module',
         });
-        /******/
+        /** ****/
       }
-      /******/ Object.defineProperty(exports, '__esModule', { value: true });
-      /******/
+      /** ****/ Object.defineProperty(exports, '__esModule', { value: true });
+      /** ****/
     };
-    /******/
+    /** ****/
   })();
-  /******/
-  /************************************************************************/
-  /******/
-  /******/ // startup
-  /******/ // Load entry module and return exports
-  /******/ // This entry module is referenced by other modules so it can't be inlined
-  /******/ var __webpack_exports__ = __webpack_require__(0);
-  /******/
-  /******/
+  /** ****/
+  /** **********************************************************************/
+  /** ****/
+  /** ****/ // startup
+  /** ****/ // Load entry module and return exports
+  /** ****/ // This entry module is referenced by other modules so it can't be inlined
+  /** ****/ const __webpack_exports__ = __webpack_require__(0);
+  /** ****/
+  /** ****/
 })();
-//# sourceMappingURL=main.js.map
+// # sourceMappingURL=main.js.map

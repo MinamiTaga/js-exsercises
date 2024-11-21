@@ -22,6 +22,7 @@ type PriorityTask = Task & {
 };
 
 // Userオブジェクトであることを判定する
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isUserObject(obj: any): boolean {
   return (
     typeof obj === 'object' &&

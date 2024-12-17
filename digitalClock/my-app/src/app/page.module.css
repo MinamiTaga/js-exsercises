@@ -1,19 +1,20 @@
 .page {
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  min-height: 100vh; /* 画面全体をカバー */
+  background: linear-gradient(180deg, #1e1e1e, #3b3b3b); /* 黒のグラデーション */
+  font-family: "Helvetica Neue", Arial, sans-serif; /* シンプルなフォント */
+  color: #ffffff; /* 白文字 */
 }
 
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* 各要素間のスペース */
 }
 
 .main ol {
@@ -37,44 +38,117 @@
   font-weight: 600;
 }
 
+/* リンクをまとめたコンテナ */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* 各リンク間のスペース */
+}
+
+/* 個別のリンク */
+.link {
+  color: #ffffff; /* 白文字 */
+  text-decoration: none; /* 下線を消す */
+  font-size: 1.5rem; /* リンクの文字サイズ */
+  padding: 0.5rem 1rem; /* リンクボタンのパディング */
+  border: 1px solid #ffffff; /* 白枠 */
+  border-radius: 8px; /* ボタンに角丸 */
+  background: rgba(255, 255, 255, 0.1); /* 半透明の背景 */
+  transition: all 0.3s ease; /* ホバー時のスムーズなアニメーション */
+}
+
+/* ホバー時のリンクスタイル */
+.link:hover {
+  background: rgba(255, 255, 255, 0.2); /* 背景を少し濃くする */
+  transform: scale(1.1); /* 少し拡大 */
+}
+
 .clock {
-  font-size: 10rem; 
-  text-align: center; 
+  color: #ffffff; /* 白色の文字 */
+  font-size: 6rem; /* 大きな文字サイズ */
+  font-weight: 200; /* 薄いフォントウェイト */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* 文字に奥行きを与える */
 }
 
 .date {
-  font-size: 2rem; 
-  text-align: left; 
+  font-size: 2rem; /* 日付の文字サイズ */
+  font-weight: 300; /* 軽めのフォントウェイト */
+  color: #ffffff; /* 白色の文字 */
+  margin-bottom: 1rem; /* 下に適度なスペース */
+  text-align: center; /* テキスト中央揃え */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* 奥行きを持たせる影 */
+}
+
+.timer {
+  font-size: 4rem; /* タイマー表示の大きさ */
+  font-weight: bold; /* 太字 */
+  color: #ffffff; /* 白色 */
+  text-align: center; /* 中央揃え */
+  margin: 1rem 0; /* 上下に適度な余白 */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* 影を追加 */
 }
 
 .inputContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
 }
 
 .inputLabel {
-  display: inline-block;
-  margin-right: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem; /* ラベルの文字サイズ */
+  font-weight: 400; /* 通常の太さ */
+  color: #ffffff; /* 白色 */
+  margin-right: 0.5rem; /* ラベルと入力の間の余白 */
 }
 
 .timerInput {
-  width: 60px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem; /* 入力フィールドの文字サイズ */
+  padding: 0.5rem;
+  border: 1px solid #ffffff; /* 白いボーダー */
+  border-radius: 5px;
+  background-color: transparent; /* 背景を透過 */
+  color: #ffffff; /* 入力文字を白色に */
+  text-align: center; /* 中央揃え */
+  width: 4rem;
 }
 
 .soundsInput {
-  width: 130px;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  font-size: 1rem; /* フォントサイズ */
+  padding: 0.5rem;
+  border: 2px solid #ffffff; /* 白いボーダー */
+  border-radius: 5px;
+  background-color: #333333; /* 背景を暗めに */
+  color: #ffffff; /* テキスト色を白に */
+  margin: 1rem auto;
+  display: block; /* 中央揃え */
+}
+
+.stopwatchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  padding: 1rem;
+}
+
+.buttonContainer {
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+}
+
+.lapList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 150px; 
+  overflow-y: auto; /* スクロール可能にする */
+  width: 120%;
   text-align: center;
-  font-size: 1rem;
 }
 
 .errorMessage {

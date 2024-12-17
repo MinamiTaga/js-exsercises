@@ -36,22 +36,28 @@ h1 {
 }
 
 button {
-  padding: 10px 20px;
-  margin: 10px 5px;
+  font-size: 1rem; /* ボタンの文字サイズ */
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  color: white;
-  background-color: #0a63de;
+  border-radius: 5px;
+  background-color: #4caf50; /* 緑色 */
+  color: #ffffff; /* 白色 */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* 少し濃い緑 */
 }
 
 button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+  background-color: #cccccc; /* 無効時の灰色 */
+}
+
+li {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0.5rem 0;
 }

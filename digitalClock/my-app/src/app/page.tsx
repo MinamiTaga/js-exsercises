@@ -9,8 +9,14 @@ export default function Home() {
       <main className={styles.main}>
         <Dates />
         <Clock />
-        <Link href="/Timer">タイマー</Link>
-        <Link href="/StopWatch">ストップウォッチ</Link>
+        <div className={styles.links}>
+          <Link href="/Timer" className={styles.link}>
+            タイマー
+          </Link>
+          <Link href="/StopWatch" className={styles.link}>
+            ストップウォッチ
+          </Link>
+        </div>
       </main>
     </div>
   );

@@ -64,7 +64,7 @@ const Timer: React.FC = () => {
 
   const handleReset = () => {
     setIsActive(false);
-    setTotalSeconds(parseInt(minutes) * 60 + parseInt(seconds));
+    setTotalSeconds(0);
   };
 
   const handleMinutesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,7 +83,7 @@ const Timer: React.FC = () => {
       )}
       <InputField label=" 分" value={minutes} onChange={handleMinutesChange} />
       <InputField label=" 秒" value={seconds} onChange={handleSecondsChange} />
-      <div className={styles.clock}>
+      <div className={styles.timer}>
         {Math.floor(totalSeconds / 60)}:
         {totalSeconds % 60 < 10 ? `0${totalSeconds % 60}` : totalSeconds % 60}
       </div>
